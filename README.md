@@ -4,7 +4,7 @@
 
 An end-to-end data analytics project for a pharmaceutical distribution business, covering database design, SQL reporting, Excel charts, Python EDA, forecasting & automation, and Power BI dashboards.
 
----
+
 
 ## 📌 Project Overview
 
@@ -18,7 +18,7 @@ The objective was to build an end-to-end analytics workflow supporting:
 - Drug profitability analysis
 - Expiry risk reduction
 
----
+
 
 ## 🎯 Business Objectives
 
@@ -31,7 +31,7 @@ The objective was to build an end-to-end analytics workflow supporting:
 | Profitability unclear across drug categories | DAX profit margin measures + Power BI alerts |
 | No forecast for future demand | 6-month ARIMA forecasting in Python |
 
----
+
 
 ## 🏆 Results Delivered
 
@@ -41,7 +41,7 @@ The objective was to build an end-to-end analytics workflow supporting:
 - ✅ Built a real-time profit margin alert system flagging underperforming drug categories automatically
 - ✅ **25% improvement** in capacity planning accuracy using ARIMA demand forecasting
 
----
+
 
 ## 📁 Project Structure
 
@@ -74,7 +74,7 @@ PharmaProject/
 
 > 📂 See each folder's `README.md` for detailed documentation on schema, SQL queries, DAX measures, and Python analysis.
 
----
+
 
 ## 🛠️ Tools & Technologies
 
@@ -86,7 +86,6 @@ PharmaProject/
 | **Power BI** | Star schema data model, 20 DAX measures, 5 interactive dashboard pages, KPI tracking, automated alerts |
 | **Power Automate** | Automated report distribution and threshold-triggered notifications to management |
 
----
 
 ## 🗂️ Data Model
 
@@ -102,7 +101,7 @@ Date ──── Sales ──── Drugs
          SaleDate
 ```
 
----
+
 
 ## 📈 Excel Highlights
 
@@ -111,7 +110,7 @@ Date ──── Sales ──── Drugs
 - Built pivot tables for drug demand by category, monthly sales, and top customers
 - Added conditional formatting for low inventory alerts and high-demand categories
 
----
+
 
 ## 🐍 Python Highlights
 
@@ -133,18 +132,18 @@ Date ──── Sales ──── Drugs
 - 6-month forward forecast with 95% confidence intervals
 - Results exported to CSV for use in Power BI
 
----
+
 
 ## 📊 Power BI Highlights
 
 **20 DAX measures** covering revenue, cost, profit margin, MoM growth, active customers, fast/slow-moving drug classification, and KPI target alerts.
 
 **5 dashboard pages:**
-1. 📋 Executive Summary — KPIs, targets, alerts
-2. 📈 Sales & Demand — trends, top drugs, category breakdown
-3. 🏥 Customer Analysis — hospital vs pharmacy, top customers
-4. 🧪 Inventory & Expiry Risk — expiry classification, slow-moving stock
-5. 💰 Profitability — margin analysis, cost variance, category comparison
+1. Executive Summary — KPIs, targets, alerts
+2. Sales & Demand — trends, top drugs, category breakdown
+3. Customer Analysis — hospital vs pharmacy, top customers
+4. Inventory & Expiry Risk — expiry classification, slow-moving stock
+5. Profitability — margin analysis, cost variance, category comparison
 
 ---
 
@@ -178,29 +177,29 @@ python python/pharma_python_solution.py
 ## 🧠 Key Insights
 
 ### 💰 Revenue & Profitability
-- ✅ Total revenue of **$281,749** exceeded the yearly target of $250,000
-- ✅ Total units sold of **9,733** exceeded the yearly quantity target of 9,000
-- 📈 Overall profit margin sits at **48.3%** — well above the 30% threshold
-- 💵 Total profit generated: **$136,183** against a target of $90,000
+- Total revenue of **$281,749** exceeded the yearly target of $250,000
+- Total units sold of **9,733** exceeded the yearly quantity target of 9,000
+- Overall profit margin sits at **48.3%** — well above the 30% threshold
+- Total profit generated: **$136,183** against a target of $90,000
 
 ### 💊 Top Performing Products
-- 🥇 **Antibiotics** are the leading category by both revenue ($101,487) and volume (2,572 units)
-- 🏆 **Ciprofloxacin 500mg** is the single best-selling drug — 935 units sold, $23,090 profit
-- ⚡ **ORS Electrolyte** delivers the best profit-to-volume ratio — 772 units at $19,284 profit
-- 💪 **Supplements** (Zinc Sulphate, Vitamin D3) are high-margin and consistent performers
+- **Antibiotics** are the leading category by both revenue ($101,487) and volume (2,572 units)
+- **Ciprofloxacin 500mg** is the single best-selling drug — 935 units sold, $23,090 profit
+- **ORS Electrolyte** delivers the best profit-to-volume ratio — 772 units at $19,284 profit
+- **Supplements** (Zinc Sulphate, Vitamin D3) are high-margin and consistent performers
 
 ### 🏥 Customer Performance
-- 🌟 **Modern Pharmacy** is the top customer — $57,342 revenue and $43,188 profit
-- 🚨 **Al Noor Pharmacy** — 2nd highest revenue at $33,314 but generating a **loss of -$1,949** due to poor margins
-- ✅ **Apollo Hospital** and **Prime Hospital** are efficient accounts with strong profit margins
+- **Modern Pharmacy** is the top customer — $57,342 revenue and $43,188 profit
+- **Al Noor Pharmacy** — 2nd highest revenue at $33,314 but generating a **loss of -$1,949** due to poor margins
+- **Apollo Hospital** and **Prime Hospital** are efficient accounts with strong profit margins
 
 ### 📅 Seasonality
-- 🔥 **May ($58,425) and June ($83,914)** account for over 50% of annual revenue
-- ❄️ **September ($1,232) and February ($1,100)** are near-zero revenue months
+- **May ($58,425) and June ($83,914)** account for over 50% of annual revenue
+- **September ($1,232) and February ($1,100)** are near-zero revenue months
 
 ### ⚠️ Expiry Risk
-- 🔴 **2 Amoxicillin 250mg variants** have only 18 months shelf life — below the 24-month threshold
-- 💸 Combined revenue at risk: **$18,314** across 668 units
+- **2 Amoxicillin 250mg variants** have only 18 months shelf life — below the 24-month threshold
+- Combined revenue at risk: **$18,314** across 668 units
 
 ---
 
