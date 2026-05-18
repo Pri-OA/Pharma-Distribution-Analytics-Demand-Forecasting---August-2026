@@ -1,0 +1,61 @@
+CustomerID,CustomerName,CustomerType,City,JoinDate
+C001,Medex Hospital,Pharmacy,Abu Dhabi,2019-04-06
+C002,Yateem Hospital,Hospital,Abu Dhabi,2019-08-09
+C003,Seha Hospital,Pharmacy,Muscat,2022-09-17
+C004,Jupiter Hospital,Pharmacy,Riyadh,2018-10-12
+C005,Aster Hospital,Pharmacy,Riyadh,2019-10-04
+C006,Reyada Hospital,Pharmacy,Muscat,2019-05-08
+C007,Canadian Hospital,Pharmacy,Abu Dhabi,2019-08-28
+C008,Medex Hospital,Pharmacy,Abu Dhabi,2021-10-20
+C009,Life Care Hospital,Pharmacy,Dubai,2020-02-02
+C010,HealthPlus Pharmacy,Hospital,Abu Dhabi,2020-11-20
+C011,Zulekha Pharmacy,Hospital,Dubai,2023-01-05
+C012,Aster Hospital,Hospital,Dubai,2022-03-08
+C013,NMC Pharmacy,Pharmacy,Riyadh,2022-04-20
+C014,Al Noor Pharmacy,Hospital,Doha,2022-03-30
+C015,Zulekha Hospital,Hospital,Muscat,2018-10-01
+C016,Life Care Hospital,Pharmacy,Dubai,2019-07-13
+C017,Hamad Pharmacy,Pharmacy,Dubai,2022-12-26
+C018,Al Noor Hospital,Hospital,Riyadh,2021-01-27
+C019,Alchemist Hospital,Pharmacy,Doha,2022-01-18
+C020,Starcare Pharmacy,Hospital,Abu Dhabi,2019-12-28
+C021,Yateem Pharmacy,Pharmacy,Riyadh,2022-05-02
+C022,NMC Pharmacy,Hospital,Dubai,2020-01-11
+C023,Aster Pharmacy,Hospital,Riyadh,2021-08-20
+C024,HealthPlus Hospital,Pharmacy,Abu Dhabi,2018-02-04
+C025,Al Noor Pharmacy,Pharmacy,Riyadh,2020-06-20
+C026,Prime Hospital,Hospital,Riyadh,2021-04-22
+C027,NMC Pharmacy,Hospital,Muscat,2023-02-25
+C028,Hamad Hospital,Pharmacy,Muscat,2018-05-04
+C029,NMC Hospital,Hospital,Riyadh,2019-03-13
+C030,Alchemist Pharmacy,Pharmacy,Doha,2019-06-01
+C031,Al Noor Hospital,Pharmacy,Riyadh,2018-06-15
+C032,Apollo Pharmacy,Pharmacy,Abu Dhabi,2020-08-22
+C033,Yateem Hospital,Pharmacy,Doha,2019-11-02
+C034,Hamad Hospital,Hospital,Muscat,2022-12-20
+C035,Aster Hospital,Hospital,Abu Dhabi,2018-03-02
+C036,Canadian Hospital,Pharmacy,Muscat,2020-01-06
+C037,King Faisal Pharmacy,Pharmacy,Dubai,2018-11-13
+C038,Yateem Hospital,Hospital,Abu Dhabi,2018-01-02
+C039,Life Care Pharmacy,Pharmacy,Doha,2021-02-26
+C040,Jupiter Hospital,Pharmacy,Dubai,2019-07-29
+C041,Jupiter Hospital,Hospital,Abu Dhabi,2022-12-01
+C042,King Faisal Pharmacy,Pharmacy,Abu Dhabi,2022-08-10
+C043,Seha Hospital,Pharmacy,Dubai,2020-07-20
+C044,HealthPlus Pharmacy,Hospital,Riyadh,2020-04-10
+C045,Jupiter Hospital,Pharmacy,Dubai,2019-06-08
+C046,Wellness Pharmacy,Pharmacy,Riyadh,2022-05-04
+C047,Zulekha Hospital,Hospital,Muscat,2020-01-31
+C048,Modern Pharmacy,Pharmacy,Dubai,2021-07-16
+C049,Alchemist Hospital,Pharmacy,Dubai,2019-11-12
+C050,Aster Pharmacy,Hospital,Riyadh,2018-01-09
+C051,Apollo Pharmacy,Hospital,Riyadh,2019-04-02
+C052,Apollo Hospital,Pharmacy,Doha,2022-09-13
+C053,Al Noor Pharmacy,Pharmacy,Dubai,2018-07-25
+C054,HealthPlus Pharmacy,Pharmacy,Riyadh,2021-07-14
+C055,Yateem Pharmacy,Pharmacy,Abu Dhabi,2021-08-17
+C056,Prime Pharmacy,Hospital,Doha,2021-04-18
+C057,Alchemist Pharmacy,Hospital,Abu Dhabi,2019-06-02
+C058,King Faisal Hospital,Hospital,Riyadh,2019-05-09
+C059,Modern Pharmacy,Hospital,Muscat,2021-04-02
+C060,Wellness Pharmacy,Pharmacy,Abu Dhabi,2020-06-07
