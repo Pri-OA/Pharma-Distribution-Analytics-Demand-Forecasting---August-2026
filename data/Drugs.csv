@@ -1,0 +1,41 @@
+DrugID,DrugName,Category,UnitPrice,CostPrice,ShelfLifeMonths
+D001,Paracetamol 500mg,Analgesic,12,6,24
+D002,Ibuprofen 200mg,Analgesic,18,9,24
+D003,Amoxicillin 250mg,Antibiotic,35,20,18
+D004,Ciprofloxacin 500mg,Antibiotic,48,30,24
+D005,Azithromycin 250mg,Antibiotic,55,35,24
+D006,Vitamin C 500mg,Supplement,10,5,36
+D007,Vitamin D3 1000IU,Supplement,20,10,36
+D008,Pantoprazole 40mg,Gastro,22,12,30
+D009,Omeprazole 20mg,Gastro,18,10,30
+D010,ORS Pack,General,5,3,48
+D011,Cetirizine 10mg,Allergy,8,4,36
+D012,Loratadine 10mg,Allergy,12,6,36
+D013,Metformin 500mg,Diabetes,25,15,24
+D014,Gliclazide 80mg,Diabetes,30,18,24
+D015,Insulin Regular,Diabetes,150,100,12
+D016,Amlodipine 5mg,Cardiac,12,6,36
+D017,Atorvastatin 20mg,Cardiac,35,22,24
+D018,Losartan 50mg,Cardiac,30,18,24
+D019,Zinc Sulphate,Supplement,15,8,36
+D020,ORS Electrolyte,General,6,3,36
+D021,Vitamin C 500mg 17,Supplement,13,5,36
+D022,Vitamin C 500mg 17 59,Supplement,18,5,36
+D023,Pantoprazole 40mg 22,Gastro,24,12,30
+D024,Ciprofloxacin 500mg 64,Antibiotic,52,30,24
+D025,Gliclazide 80mg 33,Diabetes,34,18,24
+D026,Cetirizine 10mg 38,Allergy,10,4,36
+D027,Ciprofloxacin 500mg 86,Antibiotic,50,30,24
+D028,Ciprofloxacin 500mg 24,Antibiotic,52,30,24
+D029,Vitamin D3 1000IU 52,Supplement,22,10,36
+D030,Vitamin D3 1000IU 52 14,Supplement,27,10,36
+D031,Vitamin C 500mg 99,Supplement,11,5,36
+D032,Vitamin D3 1000IU 52 9,Supplement,25,10,36
+D033,Vitamin D3 1000IU 52 14 24,Supplement,29,10,36
+D034,Ibuprofen 200mg 40,Analgesic,23,9,24
+D035,Gliclazide 80mg 33 46,Diabetes,38,18,24
+D036,Ibuprofen 200mg 40 27,Analgesic,24,9,24
+D037,Vitamin C 500mg 99 46,Supplement,14,5,36
+D038,Losartan 50mg 50,Cardiac,33,18,24
+D039,Losartan 50mg 86,Cardiac,34,18,24
+D040,Amoxicillin 250mg 18,Antibiotic,36,20,18
