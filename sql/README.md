@@ -1,90 +1,60 @@
-# 🗄️ SQL — Pharmaceutical Distribution Analytics
+🗄️ SQL Database Layer — Pharmaceutical Distribution Analytics
+Overview
+The SQL layer is the backbone of the entire project. After cleaning and structuring the data in Excel, the database was built in MySQL to store, query, and validate every business insight surfaced in Power BI. Every number in the dashboard was confirmed here first — SQL was the validation layer, not just a reporting tool.
 
-**Database:** MySQL  
-**Author:** Prince Owusu Agyare  
+1. 🏗️ Database Schema
+Three relational tables with primary keys, foreign keys, and referential integrity enforced from the start.
+TableDescriptionPrimary KeyDrugsDrug catalogue — name, category, unit price, cost price, shelf lifeDrugIDCustomersHospital and pharmacy records — name, type, city, join dateCustomerIDSalesTransaction records — links customers to drugs via foreign keysSalesID
+Relationships:
 
-All scripts follow a single consolidated file structure organised into 5 clearly commented sections — from schema design through to stored procedures.
+Sales → Customers via CustomerID
+Sales → Drugs via DrugID
 
----
 
-## 📋 Section Index
+2. 🔍 Queries Written
+QueryPurposeKey ResultTotal RevenueGross revenue across all sales$3,845,045Total Quantity SoldUnits moved across all transactions136,870 unitsTop Selling DrugsDemand, revenue, and profit per drugCiprofloxacin 500mg leads — 4,879 units, $107,338 profitDrug Demand by CategoryRevenue and profit margin per categoryAntibiotics $1.125M · Supplements 58.5% marginMonthly Sales TrendRevenue, quantity, active customers by monthMay ($551K) and June ($366K) peak monthsHigh-Order Hospitals & PharmaciesTop 10 customers by revenue, quantity, ordersZulekha Hospital leads — $217,972, 27 ordersHospital vs Pharmacy ConsumptionRevenue, quantity, customer count, avg order value by typePharmacies $2.14M vs Hospitals $1.70MDrug Expiry RiskFlags drugs below 30-month shelf life thresholdAmoxicillin 250mg (18 months) and Insulin Regular (12 months) — 🔴 RiskyFast vs Slow Moving DrugsClassifies drugs above/below avg demand (273.74 units)Pantoprazole 40mg and Vitamin C lead fast-movingOrder Count per CustomerTotal distinct orders per customerNMC Pharmacy leads — 29 ordersAverage Quantity DemandAverage units ordered per drugSupports procurement planning thresholds
 
-| # | Section | What it does |
-|---|---|---|
-| 1 | Table Creation | Creates `Drugs`, `Customers`, and `Sales` tables with primary and foreign key constraints |
-| 2 | Revenue & Performance | Total revenue, top-selling drugs, category breakdown, monthly sales trend |
-| 3 | Customer Behaviour | Top customers by revenue, hospital vs pharmacy comparison, ordering frequency and loyalty |
-| 4 | Inventory & Expiry Risk | Drugs expiring within 12 months with risk classification, slow-moving stock with expiry risk |
-| 5 | Stored Procedure | `MonthlyPharmaReport()` — parameterised monthly report covering revenue, profit, top drugs, and top customers |
+3. 🔗 Join Queries
+All analytical queries use multi-table joins across Sales, Drugs, and Customers to produce business-ready results:
+sql-- Example: Hospital vs Pharmacy revenue comparison
+SELECT c.CustomerType,
+       SUM(s.Quantity)              AS TotalQuantity,
+       SUM(s.Quantity * d.UnitPrice) AS TotalRevenue,
+       COUNT(DISTINCT s.CustomerID) AS CustomerCount,
+       ROUND(AVG(s.Quantity * d.UnitPrice), 2) AS AvgOrderValue
+FROM Sales s
+JOIN Customers c ON s.CustomerID = c.CustomerID
+JOIN Drugs d     ON s.DrugID = d.DrugID
+GROUP BY c.CustomerType
+ORDER BY TotalRevenue DESC;
 
----
+4. 📊 RFM Customer Segmentation
+Built a Recency-Frequency-Monetary table to segment all 60 customers for marketing and loyalty targeting:
+MetricDefinitionRecencyDays since last order vs most recent sale in datasetFrequencyCount of distinct sales transactionsMonetaryTotal spend (Quantity × UnitPrice)
+Top result: Zulekha Hospital — 27 orders, $217,972 spend, 2 days recency.
 
-## 🗂️ Database Schema
+5. ⚙️ Stored Procedure — Pharma_Reports
+A reusable stored procedure that generates a full monthly management summary on demand.
+sqlCALL pharmaproject.Pharma_Reports('2023-07');
+Output columns: ReportMonth · Total_Revenue · TotalCost · TotalProfit · Total_Qty_Sold · ActiveCustomers · UniqueDrugsOrdered
+Sample output for 2023-07:
+$326,998 revenue · $180,569 cost · $146,429 profit · 11,412 units · 27 active customers · 23 unique drugs
 
-Three tables in a star schema — `Sales` as the fact table, `Drugs` and `Customers` as dimension tables.
+6. ⚠️ Expiry Risk Report
+sqlSELECT DrugName, ShelfLifeMonths AS MonthsToExpiry,
+  CASE WHEN ShelfLifeMonths <= 18 THEN 'risky' ELSE 'ok' END AS Status
+FROM Drugs
+WHERE ShelfLifeMonths < 30;
+Flagged drugs requiring immediate procurement review:
 
-```
-Customers ──── Sales ──── Drugs
-```
+🔴 Amoxicillin 250mg — 18 months
+🔴 Insulin Regular — 12 months
 
-| Table | Primary Key | Foreign Keys |
-|---|---|---|
-| `Drugs` | DrugID | — |
-| `Customers` | CustomerID | — |
-| `Sales` | SalesID | CustomerID → Customers, DrugID → Drugs |
 
----
+7. ✅ Validation Against Power BI
+Every key metric produced in SQL was cross-referenced against the Power BI dashboard to confirm data accuracy and model integrity. Results matched across all measures — confirming the star schema, DAX calculations, and source data are all aligned.
 
-## 📊 Queries Included
+8. 📁 Files
+FileDescriptioncreate_tables_import_data_and_preview.sqlSchema creation, data import instructions, table previewspharma_queries.sqlAll analytical queriesstore_procedure_for_reports.sqlMonthly Pharma_Reports stored procedure
 
-### Section 2 — Revenue & Performance
-- **Total Revenue** — overall sales revenue across all transactions
-- **Top 10 Drugs** — ranked by quantity sold, with revenue and profit per drug
-- **Revenue by Category** — demand, revenue, and profit margin % per drug category
-- **Monthly Sales Trend** — month-by-month revenue, quantity, and active customer count
-
-### Section 3 — Customer Behaviour
-- **Top 10 Customers** — ranked by revenue, split by hospital / pharmacy / wholesaler type
-- **Hospital vs Pharmacy Comparison** — total quantity, revenue, customer count, and average order value by customer type
-- **Customer Loyalty** — order frequency, first and last order date, days between first and last order
-
-### Section 4 — Inventory & Expiry Risk
-- **Expiry Risk Report** — all drugs expiring within 12 months, classified as:
-  - 🔴 `CRITICAL` — expires within 3 months
-  - 🟠 `HIGH` — expires within 6 months
-  - 🟡 `MODERATE` — expires within 12 months
-- **Slow-Moving Expiry Risk** — drugs with fewer than 50 units sold and expiring within 6 months
-
-### Section 5 — Stored Procedure
-
-```sql
-CALL MonthlyPharmaReport('2025-06');
-```
-
-Returns three result sets for the given month:
-1. **Summary** — revenue, cost, profit, profit margin %, quantity sold, active customers, unique drugs ordered
-2. **Top 5 drugs** by quantity sold
-3. **Top 5 customers** by revenue
-
----
-
-## ▶️ How to Run
-
-```sql
--- Step 1: Create the database
-CREATE DATABASE PharmaProject;
-USE PharmaProject;
-
--- Step 2: Run the full script
-source pharma_queries.sql
-
--- Step 3: Import data via MySQL Workbench Table Data Import Wizard (uploaded in the excel folder)
-
--- Step 4: Create store procedure to Generate a monthly report
-CALL MonthlyPharmaReport('2023-07');
-```
-
----
-
-> 📁 Full script: [`pharma_queries.sql`](./pharma_queries.sql)  
-> 📂 Back to main project: [`README`](../README.md)
+Raw data is not included in this repository. Sample anonymised data is available in the /data/ folder.
