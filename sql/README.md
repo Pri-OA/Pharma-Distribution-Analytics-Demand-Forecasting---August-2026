@@ -78,10 +78,10 @@ USE PharmaProject;
 -- Step 2: Run the full script
 source pharma_queries.sql
 
--- Step 3: Import data via MySQL Workbench Table Data Import Wizard
+-- Step 3: Import data via MySQL Workbench Table Data Import Wizard (uploaded in the excel folder)
 
--- Step 4: Generate a monthly report
-CALL MonthlyPharmaReport('2025-06');
+-- Step 4: Create store procedure to Generate a monthly report
+CALL MonthlyPharmaReport('2023-07');
 ```
 
 ---
