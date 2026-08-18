@@ -35,11 +35,11 @@ The objective was to build an end-to-end analytics workflow supporting:
 
 ## 🏆 Results and Impacts
 
--🚀 Identified fast-moving vs. slow-moving drug segments, enabling smarter procurement and inventory decisions.
--⚠️ Delivered expiry-risk intelligence, enabling procurement teams to act on critical stock before potential losses occur.
--⏱️ 40% reduction in manual reporting effort through automated Power BI dashboards and scheduled reporting.
--💰 Built an automated profit-margin alert system to flag underperforming drug categories and support faster commercial decisions.
--🎯 25% improvement in demand/capacity planning accuracy using Python and ARIMA forecasting.
+- 🚀 Identified fast-moving vs. slow-moving drug segments, enabling smarter procurement and inventory decisions.
+- ⚠️ Delivered expiry-risk intelligence, enabling procurement teams to act on critical stock before potential losses occur.
+- ⏱️ 40% reduction in manual reporting effort through automated Power BI dashboards and scheduled reporting.
+- 💰 Built an automated profit-margin alert system to flag underperforming drug categories and support faster commercial decisions.
+- 🎯 25% improvement in demand/capacity planning accuracy using Python and ARIMA forecasting.
 
 
 
